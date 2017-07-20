@@ -2,7 +2,10 @@
 
 Team:
 Ryan Schultz 403923115
-Sangyeop Lee 003950078
+Peter (Sangyeop) Lee 003950078
+
+Implementing a simpler version of UNIX shell.
+
 
 Lab 1a:
 Seems to be able to handle every known case
