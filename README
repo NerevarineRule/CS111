@@ -1,0 +1,35 @@
+:::::::README Lab 1::::::::
+
+Team:
+Ryan Schultz 403923115
+Sangyeop Lee 003950078
+
+Lab 1a:
+Seems to be able to handle every known case
+
+Issues:
+haven't found any issues.
+
+Lab 1b:
+Issues:
+If a certain series of commands is put into a .sh file and executed using
+./timetrash the correct output is shown, but if a test is performed in the style of test-p-ok.sh
+,some errors will be generated.
+
+Lab 1c:
+Issues:
+there doesn't seem to be known issues at the moment. 
+but when I try to run certain cases in the way test-p-ok.sh is done under time-travel mode, certain
+independent commands, (ex: echo line) would not execute from time to time. but when i execute such commands 
+in a shell script on bash, it will always be executed. 
+
+Implementation Summary:
+First of all, we have revamped our read-command.c code.
+We have implemented another function called execute_command_t for time_travel mode. 
+We modified read-command.c, such that every command will have array of pointers to commands that it depends on and to
+commands that depend on current command. Then, in execute_comand_t, we used two queues, one for independent commands, and one for dependent commands.
+queue was implemented using linked-list. Then, first while loop will execute all the independent commands first in parallel, and the second
+while loop will execute the dependent commands. Inside the second while loop, for every iteration, it waits for all the commands 
+that current dependent command depends on to finish before executing the current dependent command itself.
+
+
